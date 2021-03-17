@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ block.super }} - Results
+{% endblock title %}
+
+{% block content %}
+
+<div class="card text-light bg-info mb-3" style="max-width: 20rem;">
+    <div class="card-header">Submitted Info</div>
+    <div class="card-body">
+        <h5 class="card-title">Name:</h5>
+        <p class="card-text">{{ name }}</p>
+        <h5 class="card-title">Dojo Location:</h5>
+        <p class="card-text">{{ dojo_location }}</p>
+        <h5 class="card-title">Favorite Language:</h5>
+        <p class="card-text">{{ favorite_language }}</p>
+        <h5 class="card-title">Comments:</h5>
+        <p class="card-text">{{ comments }}</p>
+    </div>
+    <div class="d-flex justify-content-end">
+        <a class="btn btn-primary" href="/">Go Back</a>
+    </div>
+
+    {% endblock %}

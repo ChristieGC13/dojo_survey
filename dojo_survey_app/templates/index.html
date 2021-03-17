@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+{{ block.super }} - Home
+{% endblock title %}
+
+{% block content %}
+<form action="/results" method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label for="name" class="form-label">Your Name:</label>
+        <input type="text" class="form-control" id="name" name="name">
+    </div>
+    <div class="mb-3">
+        <label for="dojo_location">Dojo Location:</label>
+        <select id="dojo_location" name="dojo_location">
+            <option value="los_angeles">Los Angeles, CA</option>
+            <option value="orange_county">Orange County, CA</option>
+            <option value="oakland">Oakland, CA</option>
+            <option value="san_jose">San Jose, CA</option>
+            <option value="boise">Boise, ID</option>
+            <option value="chicago">Chicago, IL</option>
+            <option value="tulsa">Tulsa, OK</option>
+            <option value="dallas">Dallas, TX</option>
+            <option value="arlington">Arlington, VA</option>
+            <option value="bellevue">Bellevue, WA</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <p>Favorite Language:</p>
+        <input type="radio" id="javascript" name="favorite_language" value="javascript">
+        <label for="javascript">JavaScript</label><br>
+        <input type="radio" id="python" name="favorite_language" value="python">
+        <label for="python">Python</label><br>
+        <input type="radio" id="react" name="favorite_language" value="react">
+        <label for="react">React</label><br>
+        <input type="radio" id="java" name="favorite_language" value="java">
+        <label for="java">Java</label><br>
+        <input type="radio" id="c-sharp" name="favorite_language" value="c-sharp">
+        <label for="c-sharp">C#</label><br>
+    </div>
+    <div class="mb-3">
+        <label for="comments" class="form-label">Comments (Optional)</label>
+        <textarea name= "comments" class="form-control" id="comments"></textarea>
+    </div>
+    <div class="d-flex justify-content-end">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+{% endblock %}
